@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    karateVersion = '1.4.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "com.intuit.karate:karate-junit5:${karateVersion}"
+
+    testImplementation "net.masterthought:cucumber-reporting:5.7.0"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// --- TAREA PERSONALIZADA PARA LIMPIAR REPORTES ---
+task cleanReports(type: Delete) {
+    delete 'build/karate-reports', 'build/cucumber-html-report'
+}
+
+test.dependsOn cleanReports
