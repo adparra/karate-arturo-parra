@@ -1,0 +1,22 @@
+# Directorio de caché de Gradle
+.gradle/
+
+build/
+
+
+# IntelliJ
+.idea/
+*.iml
+bin/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Archivos de Log
+*.log
